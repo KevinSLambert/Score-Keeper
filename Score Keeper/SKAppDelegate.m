@@ -14,13 +14,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    SKViewController *myController = [[SKViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:myController];
+    self.window.rootViewController = navController;
+    
     // Override point for customization after application launch.
     
-    SKViewController *viewController = [[SKViewController alloc] init];
+//    SKViewController *viewController = [[SKViewController alloc] init];
+//    
+//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    
-    self.window.rootViewController = navController;
+//    self.window.rootViewController = navController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
